@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+body {
+    background: linear-gradient(to right, #dfe9f3, #ffffff);
+  }
+
+a:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  
