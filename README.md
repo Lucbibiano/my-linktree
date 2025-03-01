@@ -1,4 +1,4 @@
-# my-linktree
+# My Link Tree - Lucas Bibiano
 
 Uma aplicação Vue.js que exibe o perfil do Tech Lead Lucas Bibiano, permitindo a centralização de vários links em uma única página personalizada.
 
