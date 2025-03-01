@@ -28,7 +28,17 @@
       :icon="instagramIcon"
     />
   </div>
-
+  <div class="text-center mt-6">
+    <div class="flex justify-center mt-6">
+      <button
+        @click="openModal"
+        class="flex items-center rounded-2xl bg-gray-100 px-6 py-4 text-lg font-medium shadow-md hover:shadow-lg transition ease-in-out duration-150 border border-gray-300 cursor-pointer"
+      >
+        Ver Tecnologias
+      </button>
+    </div>
+    <TechModal :isOpen="isModalOpen" :closeModal="closeModal" />
+  </div>
   <a
     href="mailto:lucassouzasb@gmail.com"
     class="block text-center text-blue-500 font-semibold hover:underline mt-4"
@@ -38,14 +48,32 @@
 </template>
 
 <script>
+import { ref } from "vue";
+import TechModal from "./../components/TechModal.vue";
 import linkedinIcon from "./../assets/images/linkedin.png";
 import githubIcon from "./../assets/images/github.png";
 import instagramIcon from "./../assets/images/instagram.png";
 import photoProfile from "./../assets/images/photo.jpeg";
 
 export default {
-  data() {
+  components: {
+    TechModal,
+  },
+  setup() {
+    const isModalOpen = ref(false);
+
+    const openModal = () => {
+      isModalOpen.value = true;
+    };
+
+    const closeModal = () => {
+      isModalOpen.value = false;
+    };
+
     return {
+      isModalOpen,
+      openModal,
+      closeModal,
       linkedinIcon,
       githubIcon,
       instagramIcon,
